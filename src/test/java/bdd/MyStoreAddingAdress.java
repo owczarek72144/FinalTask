@@ -1,5 +1,6 @@
 package bdd;
 
+import cucumber.api.java.After;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -115,6 +116,10 @@ public class MyStoreAddingAdress {
     @And("user click delete on My Adress")
     public void userClickDeleteAdress() {
         adressDriver.findElement(By.xpath("//*[@data-link-action='delete-address']")).click();
+    }
+    @After
+    public void tearDown(){
+        adressDriver.close();
     }
 
 

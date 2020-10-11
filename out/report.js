@@ -265,14 +265,14 @@ formatter.match({
   "location": "MyStoreAddingAdress.userOpenMyStoreMainPage()"
 });
 formatter.result({
-  "duration": 7035618400,
+  "duration": 7010738900,
   "status": "passed"
 });
 formatter.match({
   "location": "MyStoreAddingAdress.userClickSingInIcon()"
 });
 formatter.result({
-  "duration": 477042900,
+  "duration": 494279500,
   "status": "passed"
 });
 formatter.match({
@@ -285,7 +285,7 @@ formatter.match({
   "location": "MyStoreAddingAdress.userCompleteEmailBox(String)"
 });
 formatter.result({
-  "duration": 114732800,
+  "duration": 98712000,
   "status": "passed"
 });
 formatter.match({
@@ -298,28 +298,28 @@ formatter.match({
   "location": "MyStoreAddingAdress.userCompletePasswordBox(String)"
 });
 formatter.result({
-  "duration": 97449800,
+  "duration": 90014800,
   "status": "passed"
 });
 formatter.match({
   "location": "MyStoreAddingAdress.userClickOnSingInButton()"
 });
 formatter.result({
-  "duration": 704130600,
+  "duration": 796519200,
   "status": "passed"
 });
 formatter.match({
   "location": "MyStoreAddingAdress.userIsOnTheYourAccountPage()"
 });
 formatter.result({
-  "duration": 77588800,
+  "duration": 76463600,
   "status": "passed"
 });
 formatter.match({
   "location": "MyStoreAddingAdress.userClickOnAddFirstAdress()"
 });
 formatter.result({
-  "duration": 390093700,
+  "duration": 415964100,
   "status": "passed"
 });
 formatter.match({
@@ -352,14 +352,14 @@ formatter.match({
   "location": "MyStoreAddingAdress.userFillAdressForm(String,String,String,String,String,String)"
 });
 formatter.result({
-  "duration": 559775200,
+  "duration": 545789500,
   "status": "passed"
 });
 formatter.match({
   "location": "MyStoreAddingAdress.userClickOnSaveAdressButton()"
 });
 formatter.result({
-  "duration": 451103100,
+  "duration": 501621700,
   "status": "passed"
 });
 formatter.match({
@@ -372,14 +372,14 @@ formatter.match({
   "location": "MyStoreAddingAdress.adressAddSuccesMesageDisplay(String)"
 });
 formatter.result({
-  "duration": 59663800,
+  "duration": 60376500,
   "status": "passed"
 });
 formatter.match({
   "location": "MyStoreAddingAdress.userClickAdressUpdate()"
 });
 formatter.result({
-  "duration": 406556200,
+  "duration": 401476100,
   "status": "passed"
 });
 formatter.match({
@@ -412,35 +412,35 @@ formatter.match({
   "location": "MyStoreAddingAdress.userCheckTheSavedData(String,String,String,String,String,String)"
 });
 formatter.result({
-  "duration": 235263100,
+  "duration": 223238900,
   "status": "passed"
 });
 formatter.match({
   "location": "MyStoreAddingAdress.userClickBackToAccount()"
 });
 formatter.result({
-  "duration": 390733600,
+  "duration": 398031000,
   "status": "passed"
 });
 formatter.match({
   "location": "MyStoreAddingAdress.userIsOnTheYourAccountPage()"
 });
 formatter.result({
-  "duration": 47873000,
+  "duration": 51127500,
   "status": "passed"
 });
 formatter.match({
   "location": "MyStoreAddingAdress.userClickAdress()"
 });
 formatter.result({
-  "duration": 367727200,
+  "duration": 396232400,
   "status": "passed"
 });
 formatter.match({
   "location": "MyStoreAddingAdress.userClickDeleteAdress()"
 });
 formatter.result({
-  "duration": 467190200,
+  "duration": 489289300,
   "status": "passed"
 });
 formatter.match({
@@ -453,7 +453,11 @@ formatter.match({
   "location": "MyStoreAddingAdress.adressAddSuccesMesageDisplay(String)"
 });
 formatter.result({
-  "duration": 45520900,
+  "duration": 48218400,
+  "status": "passed"
+});
+formatter.after({
+  "duration": 120993300,
   "status": "passed"
 });
 });
