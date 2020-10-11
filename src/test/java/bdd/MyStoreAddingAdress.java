@@ -49,7 +49,7 @@ public class MyStoreAddingAdress {
     }
     @And("user clicks on Add first adres")
     public void userClickOnAddFirstAdress(){
-        adressDriver.findElement(By.id("address-link")).click();
+        adressDriver.findElement(By.xpath("//*[@id='address-link']")).click();
     }
     @When("user completes (.*),(.*),(.*),(.*),(.*),(.*)")
     public void userFillAdressForm(String alias,String adress,String city,String zip,String country,String phone){
@@ -65,6 +65,62 @@ public class MyStoreAddingAdress {
     public void userClickOnSaveAdressButton() {
         adressDriver.findElement(By.name("submitAddress")).submit();
     }
+    @Then("succes message displayed (.*)")
+    public void adressAddSuccesMesageDisplay(String success){
+        WebElement adres = adressDriver.findElement(By.xpath("//*[@id='notifications']/div/article/ul/li"));
+        Assert.assertTrue(adres.isDisplayed());
+        Assert.assertTrue(adres.getText().equals(success));
+    }
+    @And("user click update")
+    public void userClickAdressUpdate(){
+        adressDriver.findElement(By.xpath("//*[@data-link-action='edit-address']")).click();
+    }
+    @And("user will check the saved data (.*),(.*),(.*),(.*),(.*),(.*)")
+    public void userCheckTheSavedData(String alias,String adress,String city,String zip,String country,String phone){
+        WebElement update = adressDriver.findElement(By.xpath("//*[@id='main']/header/h1"));
+        Assert.assertTrue(update.isDisplayed());
+        Assert.assertTrue(update.getText().equals("Update your address"));
+
+        if(!adressDriver.findElement(By.name("alias")).getAttribute("value").equals(alias)){
+            System.out.println(adressDriver.findElement(By.name("alias")).getAttribute("value"));
+            System.out.println(alias);
+            Assert.fail("Alias is not correct");
+        }
+        if(!adressDriver.findElement(By.name("address1")).getAttribute("value").equals(adress)){
+            Assert.fail("Adress is not correct");
+        }
+        if(!adressDriver.findElement(By.name("city")).getAttribute("value").equals(city)){
+            Assert.fail("City is not correct");
+        }
+        if(!adressDriver.findElement(By.name("postcode")).getAttribute("value").equals(zip)){
+            Assert.fail("Zip code is not correct");
+        }
+        Select dropCountry = new Select(adressDriver.findElement(By.name("id_country")));
+        WebElement selected = dropCountry.getFirstSelectedOption();
+        if(!selected.getText().equals(country)){
+            Assert.fail("Country is not correct");
+        }
+        if(!adressDriver.findElement(By.name("phone")).getAttribute("value").equals(phone)){
+            Assert.fail("Phone is not correct");
+        }
+    }
+    @And("user click back to you account")
+    public void userClickBackToAccount(){
+        adressDriver.findElement(By.className("account-link")).click();
+    }
+    @And("user click Adresses")
+    public void userClickAdress(){
+        adressDriver.findElement(By.id("addresses-link")).click();
+    }
+    @And("user click delete on My Adress")
+    public void userClickDeleteAdress() {
+        adressDriver.findElement(By.xpath("//*[@data-link-action='delete-address']")).click();
+    }
+
+
+
+
+
 
 
 
