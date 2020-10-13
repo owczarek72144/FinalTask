@@ -17,10 +17,12 @@ public class YourAdressPage {
 
     @FindAll(@FindBy(className = "address"))
     List<WebElement> adressList;
+
     public YourAdressPage(WebDriver driver){
         this.driver = driver;
         PageFactory.initElements(driver,this);
     }
+
     public String getAdressSaveMessage(){
        return this.message.getText();
     }
@@ -32,5 +34,20 @@ public class YourAdressPage {
             }
         }
         return false;
+    }
+
+    public void deleteAdress(String addedAlias) {
+        for(WebElement s: this.adressList){
+            if(s.findElement(By.tagName("h4")).getText().equals(addedAlias)){
+                List<WebElement> elements = s.findElements(By.tagName("a"));
+                for(WebElement e : elements){
+                    if(e.getText().contains("Delete")){
+                        e.click();
+                    }
+                }
+
+            }
+
+        }
     }
 }

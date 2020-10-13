@@ -1,5 +1,6 @@
 package bddpagefactory;
 
+import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
@@ -42,6 +43,10 @@ public class NewAdressSteps {
 
     }
 
+    @After
+    public void tearDown(){
+        driver.close();
+    }
     @Given("user open browser with my store login page")
     public void openMystorePage() {
         driver.get("https://prod-kurs.coderslab.pl/index.php?controller=authentication&back=my-account");
@@ -80,6 +85,19 @@ public class NewAdressSteps {
     public void chceckSavedAdress(){
         Assert.assertTrue("Adress not saved",yourAdressPage.isSaveAdress(this.addedAlias));
     }
+    @And("user is on the Your addresses page")
+    public void userOnTheYourAdressesPage(){
+        driver.get("https://prod-kurs.coderslab.pl/index.php?controller=addresses");
+    }
 
+    @And("user choise added adress and delete it")
+    public void userChoiseAdedAdressAndDelete() {
+        yourAdressPage.deleteAdress(this.addedAlias);
 
+    }
+
+    @And("^user will check deleted adresss$")
+    public void userWillCheckDeletedAdresss() {
+        Assert.assertFalse("Adress deleted",yourAdressPage.isSaveAdress(this.addedAlias));
+    }
 }
