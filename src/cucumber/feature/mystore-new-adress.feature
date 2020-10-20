@@ -3,7 +3,8 @@ Feature: Adding and checking the adress
     Given user open browser with my store login page
     When user is login to my store with <email>,<password>
     Then user is loged in with user name <userName>
-    And user is on the new adress page
+    And user go to the your adress page
+    And user go to create adress page
     When user fill <alias>,<adress>,<city>,<postcode>,<country>,<phone>
     And user save adress
     Then succes message displayed <messageSave>

@@ -16,7 +16,9 @@ public class YourAdressPage {
     WebElement message;
 
     @FindAll(@FindBy(className = "address"))
-    List<WebElement> adressList;
+    private List<WebElement> adressList;
+    @FindBy(xpath = "//*[@data-link-action='add-address']")
+    private WebElement createAdres;
 
     public YourAdressPage(WebDriver driver){
         this.driver = driver;
@@ -35,7 +37,9 @@ public class YourAdressPage {
         }
         return false;
     }
-
+    public void goToNewAdressPage(){
+        createAdres.click();
+    }
     public void deleteAdress(String addedAlias) {
         for(WebElement s: this.adressList){
             if(s.findElement(By.tagName("h4")).getText().equals(addedAlias)){

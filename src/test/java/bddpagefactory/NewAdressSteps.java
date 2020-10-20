@@ -11,13 +11,16 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import pages.LoginPage;
 import pages.NewAdressPage;
+import pages.YourAccountPage;
 import pages.YourAdressPage;
 
 import java.util.Random;
+import java.util.concurrent.TimeUnit;
 
 public class NewAdressSteps {
     LoginPage loginPage;
     NewAdressPage newAdressPage;
+    YourAccountPage yourAccountPage;
     YourAdressPage yourAdressPage;
     WebDriver driver;
     String addedAlias;
@@ -35,11 +38,13 @@ public class NewAdressSteps {
         System.setProperty("webdriver.chrome.driver",
                 "src/main/resources/drivers/chromedriver.exe");
         driver = new ChromeDriver();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.manage().window().maximize();
         driver.get("https://prod-kurs.coderslab.pl/index.php");
         loginPage = new LoginPage(this.driver);
         newAdressPage = new NewAdressPage(this.driver);
         yourAdressPage = new YourAdressPage(this.driver);
+        yourAccountPage  = new YourAccountPage(this.driver);
 
     }
 
@@ -62,9 +67,13 @@ public class NewAdressSteps {
     public void userIsLogedInWith(String userName){
         Assert.assertTrue("User name incorrect",loginPage.isLogged(userName));
     }
-    @And("user is on the new adress page")
-    public void userIsOnTheNewAdressPage(){
-        driver.get("https://prod-kurs.coderslab.pl/index.php?controller=address");
+    @And("user go to the your adress page")
+    public void goToTheYourAdressPage(){
+        yourAccountPage.goToYourAdressPage();
+    }
+    @And("user go to create adress page")
+    public void goToCreateNewAdressPage(){
+        yourAdressPage.goToNewAdressPage();
     }
     @When("user fill (.*),(.*),(.*),(.*),(.*),(.*)")
     public void userFillNewAdressForm(String alias,String adress,String city,
