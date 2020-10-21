@@ -1,463 +1,313 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("mystore-adding-adress.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("src/cucumber/feature/purchase-of-the-product.feature");
 formatter.feature({
   "line": 1,
-  "name": "Adding and checking the adress",
+  "name": "Purchase of the product",
   "description": "",
-  "id": "adding-and-checking-the-adress",
+  "id": "purchase-of-the-product",
   "keyword": "Feature"
 });
 formatter.scenarioOutline({
   "line": 2,
-  "name": "User can add adress",
+  "name": "User can buy Hummingbird Printed Sweater",
   "description": "",
-  "id": "adding-and-checking-the-adress;user-can-add-adress",
+  "id": "purchase-of-the-product;user-can-buy-hummingbird-printed-sweater",
   "type": "scenario_outline",
   "keyword": "Scenario Outline"
 });
 formatter.step({
   "line": 3,
-  "name": "an open browser with https://prod-kurs.coderslab.pl/index.php",
+  "name": "user open browser with my store login page",
   "keyword": "Given "
 });
 formatter.step({
   "line": 4,
-  "name": "user click SingIn icon",
-  "keyword": "And "
+  "name": "user is login to my store with \u003cemail\u003e,\u003cpassword\u003e",
+  "keyword": "When "
 });
 formatter.step({
   "line": 5,
-  "name": "user complete email box with \u003cemail\u003e",
-  "keyword": "When "
+  "name": "user is loged in with user name \u003cuserName\u003e",
+  "keyword": "Then "
 });
 formatter.step({
   "line": 6,
-  "name": "user complete password with \u003cpassword\u003e",
-  "keyword": "When "
+  "name": "user search product \u003cproduct\u003e",
+  "keyword": "And "
 });
 formatter.step({
   "line": 7,
-  "name": "user clicks on SingIn button",
+  "name": "user check \u003cdiscount\u003e",
   "keyword": "And "
 });
 formatter.step({
   "line": 8,
-  "name": "user is on the Your account/ Adress Page",
-  "keyword": "Then "
+  "name": "user choise size \u003csize\u003e",
+  "keyword": "And "
 });
 formatter.step({
   "line": 9,
-  "name": "user clicks on Add first adres",
+  "name": "user will choose the quantity \u003cquantity\u003e",
   "keyword": "And "
 });
 formatter.step({
   "line": 10,
-  "name": "user completes \u003calias\u003e,\u003cadress\u003e,\u003ccity\u003e,\u003czip\u003e,\u003ccountry\u003e,\u003cphone\u003e",
-  "keyword": "When "
+  "name": "user add product to cart",
+  "keyword": "Then "
 });
 formatter.step({
   "line": 11,
-  "name": "user click on save button",
+  "name": "user go to checkout",
   "keyword": "And "
 });
 formatter.step({
   "line": 12,
-  "name": "succes message displayed \u003cmessageSave\u003e",
-  "keyword": "Then "
+  "name": "user choise adress",
+  "keyword": "And "
 });
 formatter.step({
   "line": 13,
-  "name": "user click update",
+  "name": "user choise shiping method \u003cshippingMethod\u003e",
   "keyword": "And "
 });
 formatter.step({
   "line": 14,
-  "name": "user will check the saved data \u003calias\u003e,\u003cadress\u003e,\u003ccity\u003e,\u003czip\u003e,\u003ccountry\u003e,\u003cphone\u003e",
+  "name": "user choise payment option \u003cpaymentOption\u003e",
   "keyword": "And "
 });
 formatter.step({
   "line": 15,
-  "name": "user click back to you account",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 16,
-  "name": "user is on the Your account/ Adress Page",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 17,
-  "name": "user click Adresses",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 18,
-  "name": "user click delete on My Adress",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 19,
-  "name": "succes message displayed \u003cmessageDelete\u003e",
+  "name": "user order product",
   "keyword": "Then "
 });
 formatter.examples({
-  "line": 20,
+  "line": 19,
   "name": "",
   "description": "",
-  "id": "adding-and-checking-the-adress;user-can-add-adress;",
+  "id": "purchase-of-the-product;user-can-buy-hummingbird-printed-sweater;",
   "rows": [
     {
       "cells": [
         "email",
         "password",
-        "alias",
-        "adress",
-        "city",
-        "zip",
-        "country",
-        "phone",
-        "messageSave",
-        "messageDelete"
+        "userName",
+        "product",
+        "discount",
+        "size",
+        "quantity",
+        "shippingMethod",
+        "paymentOption"
       ],
-      "line": 21,
-      "id": "adding-and-checking-the-adress;user-can-add-adress;;1"
+      "line": 20,
+      "id": "purchase-of-the-product;user-can-buy-hummingbird-printed-sweater;;1"
     },
     {
       "cells": [
-        "mmmm@mm.pl",
-        "password",
-        "ADC",
-        "Długa 51",
-        "Opole",
-        "44-444",
-        "United Kingdom",
-        "546321789",
-        "Address successfully added!",
-        "Address successfully deleted!"
+        "marek@marek.pl",
+        "qwerty",
+        "marek marek",
+        "Hummingbird Printed Sweater",
+        "20",
+        "S",
+        "5",
+        "PrestaShop \"pick up in store\"",
+        "Pay by Check"
       ],
-      "line": 22,
-      "id": "adding-and-checking-the-adress;user-can-add-adress;;2"
+      "line": 21,
+      "id": "purchase-of-the-product;user-can-buy-hummingbird-printed-sweater;;2"
     }
   ],
   "keyword": "Examples"
 });
+formatter.before({
+  "duration": 6828930800,
+  "status": "passed"
+});
 formatter.scenario({
-  "line": 22,
-  "name": "User can add adress",
+  "line": 21,
+  "name": "User can buy Hummingbird Printed Sweater",
   "description": "",
-  "id": "adding-and-checking-the-adress;user-can-add-adress;;2",
+  "id": "purchase-of-the-product;user-can-buy-hummingbird-printed-sweater;;2",
   "type": "scenario",
   "keyword": "Scenario Outline"
 });
 formatter.step({
   "line": 3,
-  "name": "an open browser with https://prod-kurs.coderslab.pl/index.php",
+  "name": "user open browser with my store login page",
   "keyword": "Given "
 });
 formatter.step({
   "line": 4,
-  "name": "user click SingIn icon",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 5,
-  "name": "user complete email box with mmmm@mm.pl",
+  "name": "user is login to my store with marek@marek.pl,qwerty",
   "matchedColumns": [
-    0
-  ],
-  "keyword": "When "
-});
-formatter.step({
-  "line": 6,
-  "name": "user complete password with password",
-  "matchedColumns": [
+    0,
     1
   ],
   "keyword": "When "
 });
 formatter.step({
+  "line": 5,
+  "name": "user is loged in with user name marek marek",
+  "matchedColumns": [
+    2
+  ],
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 6,
+  "name": "user search product Hummingbird Printed Sweater",
+  "matchedColumns": [
+    3
+  ],
+  "keyword": "And "
+});
+formatter.step({
   "line": 7,
-  "name": "user clicks on SingIn button",
+  "name": "user check 20",
+  "matchedColumns": [
+    4
+  ],
   "keyword": "And "
 });
 formatter.step({
   "line": 8,
-  "name": "user is on the Your account/ Adress Page",
-  "keyword": "Then "
+  "name": "user choise size S",
+  "matchedColumns": [
+    5
+  ],
+  "keyword": "And "
 });
 formatter.step({
   "line": 9,
-  "name": "user clicks on Add first adres",
+  "name": "user will choose the quantity 5",
+  "matchedColumns": [
+    6
+  ],
   "keyword": "And "
 });
 formatter.step({
   "line": 10,
-  "name": "user completes ADC,Długa 51,Opole,44-444,United Kingdom,546321789",
-  "matchedColumns": [
-    2,
-    3,
-    4,
-    5,
-    6,
-    7
-  ],
-  "keyword": "When "
+  "name": "user add product to cart",
+  "keyword": "Then "
 });
 formatter.step({
   "line": 11,
-  "name": "user click on save button",
+  "name": "user go to checkout",
   "keyword": "And "
 });
 formatter.step({
   "line": 12,
-  "name": "succes message displayed Address successfully added!",
-  "matchedColumns": [
-    8
-  ],
-  "keyword": "Then "
+  "name": "user choise adress",
+  "keyword": "And "
 });
 formatter.step({
   "line": 13,
-  "name": "user click update",
+  "name": "user choise shiping method PrestaShop \"pick up in store\"",
+  "matchedColumns": [
+    7
+  ],
   "keyword": "And "
 });
 formatter.step({
   "line": 14,
-  "name": "user will check the saved data ADC,Długa 51,Opole,44-444,United Kingdom,546321789",
+  "name": "user choise payment option Pay by Check",
   "matchedColumns": [
-    2,
-    3,
-    4,
-    5,
-    6,
-    7
+    8
   ],
   "keyword": "And "
 });
 formatter.step({
   "line": 15,
-  "name": "user click back to you account",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 16,
-  "name": "user is on the Your account/ Adress Page",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 17,
-  "name": "user click Adresses",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 18,
-  "name": "user click delete on My Adress",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 19,
-  "name": "succes message displayed Address successfully deleted!",
-  "matchedColumns": [
-    9
-  ],
+  "name": "user order product",
   "keyword": "Then "
 });
 formatter.match({
-  "location": "MyStoreAddingAdress.userOpenMyStoreMainPage()"
+  "location": "PurchaseOfTheProductSteps.openMystorePage()"
 });
 formatter.result({
-  "duration": 7010738900,
-  "status": "passed"
-});
-formatter.match({
-  "location": "MyStoreAddingAdress.userClickSingInIcon()"
-});
-formatter.result({
-  "duration": 494279500,
+  "duration": 533526400,
   "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "mmmm@mm.pl",
-      "offset": 29
-    }
-  ],
-  "location": "MyStoreAddingAdress.userCompleteEmailBox(String)"
-});
-formatter.result({
-  "duration": 98712000,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "password",
-      "offset": 28
-    }
-  ],
-  "location": "MyStoreAddingAdress.userCompletePasswordBox(String)"
-});
-formatter.result({
-  "duration": 90014800,
-  "status": "passed"
-});
-formatter.match({
-  "location": "MyStoreAddingAdress.userClickOnSingInButton()"
-});
-formatter.result({
-  "duration": 796519200,
-  "status": "passed"
-});
-formatter.match({
-  "location": "MyStoreAddingAdress.userIsOnTheYourAccountPage()"
-});
-formatter.result({
-  "duration": 76463600,
-  "status": "passed"
-});
-formatter.match({
-  "location": "MyStoreAddingAdress.userClickOnAddFirstAdress()"
-});
-formatter.result({
-  "duration": 415964100,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "ADC",
-      "offset": 15
-    },
-    {
-      "val": "Długa 51",
-      "offset": 19
-    },
-    {
-      "val": "Opole",
-      "offset": 28
-    },
-    {
-      "val": "44-444",
-      "offset": 34
-    },
-    {
-      "val": "United Kingdom",
-      "offset": 41
-    },
-    {
-      "val": "546321789",
-      "offset": 56
-    }
-  ],
-  "location": "MyStoreAddingAdress.userFillAdressForm(String,String,String,String,String,String)"
-});
-formatter.result({
-  "duration": 545789500,
-  "status": "passed"
-});
-formatter.match({
-  "location": "MyStoreAddingAdress.userClickOnSaveAdressButton()"
-});
-formatter.result({
-  "duration": 501621700,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Address successfully added!",
-      "offset": 25
-    }
-  ],
-  "location": "MyStoreAddingAdress.adressAddSuccesMesageDisplay(String)"
-});
-formatter.result({
-  "duration": 60376500,
-  "status": "passed"
-});
-formatter.match({
-  "location": "MyStoreAddingAdress.userClickAdressUpdate()"
-});
-formatter.result({
-  "duration": 401476100,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "ADC",
+      "val": "marek@marek.pl",
       "offset": 31
     },
     {
-      "val": "Długa 51",
-      "offset": 35
-    },
-    {
-      "val": "Opole",
-      "offset": 44
-    },
-    {
-      "val": "44-444",
-      "offset": 50
-    },
-    {
-      "val": "United Kingdom",
-      "offset": 57
-    },
-    {
-      "val": "546321789",
-      "offset": 72
+      "val": "qwerty",
+      "offset": 46
     }
   ],
-  "location": "MyStoreAddingAdress.userCheckTheSavedData(String,String,String,String,String,String)"
+  "location": "PurchaseOfTheProductSteps.userLoginToMyStore(String,String)"
 });
 formatter.result({
-  "duration": 223238900,
-  "status": "passed"
-});
-formatter.match({
-  "location": "MyStoreAddingAdress.userClickBackToAccount()"
-});
-formatter.result({
-  "duration": 398031000,
-  "status": "passed"
-});
-formatter.match({
-  "location": "MyStoreAddingAdress.userIsOnTheYourAccountPage()"
-});
-formatter.result({
-  "duration": 51127500,
-  "status": "passed"
-});
-formatter.match({
-  "location": "MyStoreAddingAdress.userClickAdress()"
-});
-formatter.result({
-  "duration": 396232400,
-  "status": "passed"
-});
-formatter.match({
-  "location": "MyStoreAddingAdress.userClickDeleteAdress()"
-});
-formatter.result({
-  "duration": 489289300,
+  "duration": 1170304100,
   "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "Address successfully deleted!",
-      "offset": 25
+      "val": "marek marek",
+      "offset": 32
     }
   ],
-  "location": "MyStoreAddingAdress.adressAddSuccesMesageDisplay(String)"
+  "location": "PurchaseOfTheProductSteps.userIsLogedInWith(String)"
 });
 formatter.result({
-  "duration": 48218400,
+  "duration": 37944200,
   "status": "passed"
 });
+formatter.match({
+  "arguments": [
+    {
+      "val": "Hummingbird Printed Sweater",
+      "offset": 20
+    }
+  ],
+  "location": "PurchaseOfTheProductSteps.userSearchProduct(String)"
+});
+formatter.result({
+  "duration": 1313316300,
+  "status": "passed"
+});
+formatter.match({});
+formatter.result({
+  "status": "undefined"
+});
+formatter.match({});
+formatter.result({
+  "status": "undefined"
+});
+formatter.match({});
+formatter.result({
+  "status": "undefined"
+});
+formatter.match({});
+formatter.result({
+  "status": "undefined"
+});
+formatter.match({});
+formatter.result({
+  "status": "undefined"
+});
+formatter.match({});
+formatter.result({
+  "status": "undefined"
+});
+formatter.match({});
+formatter.result({
+  "status": "undefined"
+});
+formatter.match({});
+formatter.result({
+  "status": "undefined"
+});
+formatter.match({});
+formatter.result({
+  "status": "undefined"
+});
 formatter.after({
-  "duration": 120993300,
+  "duration": 28500,
   "status": "passed"
 });
 });

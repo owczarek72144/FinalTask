@@ -18,12 +18,12 @@ import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 public class NewAdressSteps {
-    LoginPage loginPage;
-    NewAdressPage newAdressPage;
-    YourAccountPage yourAccountPage;
-    YourAdressPage yourAdressPage;
-    WebDriver driver;
-    String addedAlias;
+    private LoginPage loginPage;
+    private NewAdressPage newAdressPage;
+    private YourAccountPage yourAccountPage;
+    private YourAdressPage yourAdressPage;
+    private WebDriver driver;
+    private String addedAlias;
 
     private String generateAlias(String textAlias){
         String alias = textAlias;
@@ -70,12 +70,12 @@ public class NewAdressSteps {
     @And("user go to the your adress page")
     public void goToTheYourAdressPage(){
         yourAccountPage.goToYourAdressPage();
+        if(yourAdressPage.isAdressExists() == true){
+            yourAdressPage.goToNewAdressPage();
+        }
     }
-    @And("user go to create adress page")
-    public void goToCreateNewAdressPage(){
-        yourAdressPage.goToNewAdressPage();
-    }
-    @When("user fill (.*),(.*),(.*),(.*),(.*),(.*)")
+
+  @When("user fill (.*),(.*),(.*),(.*),(.*),(.*)")
     public void userFillNewAdressForm(String alias,String adress,String city,
                                       String postcode,String country,String phone){
         this.addedAlias = generateAlias(alias);
@@ -107,6 +107,6 @@ public class NewAdressSteps {
 
     @And("^user will check deleted adresss$")
     public void userWillCheckDeletedAdresss() {
-        Assert.assertFalse("Adress deleted",yourAdressPage.isSaveAdress(this.addedAlias));
+        Assert.assertFalse("Adress not deleted",yourAdressPage.isSaveAdress(this.addedAlias));
     }
 }

@@ -4,7 +4,6 @@ Feature: Adding and checking the adress
     When user is login to my store with <email>,<password>
     Then user is loged in with user name <userName>
     And user go to the your adress page
-    And user go to create adress page
     When user fill <alias>,<adress>,<city>,<postcode>,<country>,<phone>
     And user save adress
     Then succes message displayed <messageSave>

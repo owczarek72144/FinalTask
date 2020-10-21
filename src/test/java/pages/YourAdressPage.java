@@ -12,8 +12,8 @@ import java.util.List;
 public class YourAdressPage {
     private static WebDriver driver;
 
-    @FindBy(css = "#notifications li")
-    WebElement message;
+    @FindAll(@FindBy(css = "#notifications li"))
+    List<WebElement> message;
 
     @FindAll(@FindBy(className = "address"))
     private List<WebElement> adressList;
@@ -26,16 +26,27 @@ public class YourAdressPage {
     }
 
     public String getAdressSaveMessage(){
-       return this.message.getText();
+        if(this.message.size() > 0) {
+            return this.message.get(0).getText();
+        } else {
+            return "";
+        }
     }
 
-    public boolean isSaveAdress(String addedAlias) {
+    public boolean isSaveAdress(String adressAlias) {
        for(WebElement s: this.adressList){
-            if(s.findElement(By.tagName("h4")).getText().equals(addedAlias)){
+            if(s.findElement(By.tagName("h4")).getText().equals(adressAlias)){
                 return true;
             }
         }
         return false;
+    }
+    public boolean isAdressExists(){
+        if(adressList.size() > 0){
+            return true;
+        } else{
+            return false;
+        }
     }
     public void goToNewAdressPage(){
         createAdres.click();

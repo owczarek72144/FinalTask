@@ -20,6 +20,8 @@ public class LoginPage {
     @FindBy(className = "account")
     private WebElement userName;
 
+
+
     public LoginPage(WebDriver driver){
         this.driver = driver;
         PageFactory.initElements(driver,this);
@@ -35,6 +37,7 @@ public class LoginPage {
 
         submitButton.click();
     }
+
     public boolean isLogged(String userName){
         return this.userName.getText().equals(userName);
 
