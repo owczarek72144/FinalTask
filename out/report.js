@@ -119,7 +119,7 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 7116779900,
+  "duration": 6752616800,
   "status": "passed"
 });
 formatter.scenario({
@@ -224,7 +224,7 @@ formatter.match({
   "location": "PurchaseOfTheProductSteps.openMystorePage()"
 });
 formatter.result({
-  "duration": 601850100,
+  "duration": 548288500,
   "status": "passed"
 });
 formatter.match({
@@ -241,7 +241,7 @@ formatter.match({
   "location": "PurchaseOfTheProductSteps.userLoginToMyStore(String,String)"
 });
 formatter.result({
-  "duration": 1250144500,
+  "duration": 1071384900,
   "status": "passed"
 });
 formatter.match({
@@ -254,7 +254,7 @@ formatter.match({
   "location": "PurchaseOfTheProductSteps.userIsLogedInWith(String)"
 });
 formatter.result({
-  "duration": 39731200,
+  "duration": 39673900,
   "status": "passed"
 });
 formatter.match({
@@ -267,7 +267,7 @@ formatter.match({
   "location": "PurchaseOfTheProductSteps.userSearchProduct(String)"
 });
 formatter.result({
-  "duration": 1465461900,
+  "duration": 1342497100,
   "status": "passed"
 });
 formatter.match({
@@ -280,7 +280,7 @@ formatter.match({
   "location": "PurchaseOfTheProductSteps.userCheckDiscount(String)"
 });
 formatter.result({
-  "duration": 148349100,
+  "duration": 125214600,
   "status": "passed"
 });
 formatter.match({
@@ -293,7 +293,7 @@ formatter.match({
   "location": "PurchaseOfTheProductSteps.userChoiseSize(String)"
 });
 formatter.result({
-  "duration": 131337600,
+  "duration": 122272500,
   "status": "passed"
 });
 formatter.match({
@@ -306,16 +306,22 @@ formatter.match({
   "location": "PurchaseOfTheProductSteps.userChoiseQuantity(String)"
 });
 formatter.result({
-  "duration": 1174075500,
+  "duration": 1181020200,
   "status": "passed"
 });
-formatter.match({});
-formatter.result({
-  "status": "undefined"
+formatter.match({
+  "location": "PurchaseOfTheProductSteps.addProductToCart()"
 });
-formatter.match({});
 formatter.result({
-  "status": "undefined"
+  "duration": 1475228400,
+  "status": "passed"
+});
+formatter.match({
+  "location": "PurchaseOfTheProductSteps.userGoToCheckout()"
+});
+formatter.result({
+  "duration": 612182800,
+  "status": "passed"
 });
 formatter.match({});
 formatter.result({
@@ -334,7 +340,7 @@ formatter.result({
   "status": "undefined"
 });
 formatter.after({
-  "duration": 27800,
+  "duration": 29200,
   "status": "passed"
 });
 });

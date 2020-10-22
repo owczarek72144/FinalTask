@@ -10,10 +10,7 @@ import net.bytebuddy.dynamic.ClassFileLocator;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import pages.LoginPage;
-import pages.ProductDetailPage;
-import pages.SearchResultsPage;
-import pages.YourAccountPage;
+import pages.*;
 
 
 import java.util.concurrent.TimeUnit;
@@ -24,6 +21,7 @@ public class PurchaseOfTheProductSteps {
     private YourAccountPage yourAccountPage;
     private SearchResultsPage searchResultsPage;
     private ProductDetailPage productDetailPage;
+    private ShoppingCartPage shoppingCartPage;
 
     @Before
     public void setUp() {
@@ -37,6 +35,7 @@ public class PurchaseOfTheProductSteps {
         yourAccountPage = new YourAccountPage(this.driver);
         searchResultsPage  = new SearchResultsPage(driver);
         productDetailPage = new ProductDetailPage(driver);
+        shoppingCartPage = new ShoppingCartPage(driver);
 
     }
 
@@ -80,6 +79,15 @@ public class PurchaseOfTheProductSteps {
     public void userChoiseQuantity(String quantity){
         productDetailPage.choiseQuantity(quantity);
     }
+    @Then("user add product to cart")
+    public void addProductToCart(){
+        productDetailPage.addProductToCart();
+    }
+    @And("user go to checkout")
+    public void userGoToCheckout(){
+        shoppingCartPage.goToCheckout();
+    }
+
 
 
 }

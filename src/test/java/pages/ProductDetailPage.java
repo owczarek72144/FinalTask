@@ -24,6 +24,11 @@ public class ProductDetailPage {
     @FindBy(id = "quantity_wanted")
     WebElement quantityInput;
 
+    @FindBy(css = "button.add-to-cart")
+    WebElement addToCartBtn;
+
+    @FindBy(className = "modal-content")
+    WebElement popUp;
 
 
 
@@ -71,10 +76,12 @@ public class ProductDetailPage {
         this.quantityInput.click();
         this.quantityInput.clear();
         this.quantityInput.sendKeys(quantity);
+    }
 
-
-
-
-
+    public void addProductToCart() {
+        addToCartBtn.click();
+        WebDriverWait waitForPopUp = new WebDriverWait(driver,10);
+        waitForPopUp.until(ExpectedConditions.presenceOfElementLocated(By.className("modal-content")));
+        popUp.findElement(By.xpath("//*[@id='blockcart-modal']//div/div/a")).click();
     }
 }
