@@ -4,7 +4,7 @@ Feature: Purchase of the product
     When user is login to my store with <email>,<password>
     Then user is loged in with user name <userName>
     And user search product <product>
-    And user check <discount>
+    And user check discount <discount>
     And user choise size <size>
     And user will choose the quantity <quantity>
     Then user add product to cart
@@ -18,5 +18,5 @@ Feature: Purchase of the product
 
     Examples:
     |email|password|userName|product|discount|size|quantity|shippingMethod|paymentOption|
-    |marek@marek.pl|qwerty   |marek marek|Hummingbird Printed Sweater| 20|S|5|PrestaShop "pick up in store"|Pay by Check|
+    |marek@marek.pl|qwerty   |marek marek| Hummingbird Printed Sweater | 20|L|5|PrestaShop "pick up in store"|Pay by Check|
 

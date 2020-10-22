@@ -25,7 +25,7 @@ public class SearchResultsPage {
 
     public void searchProductFromList(String product){
         for(WebElement s:productList){
-            if(s.findElement(By.tagName("h2")).getText().equals(product)){
+            if(s.findElement(By.tagName("h2")).getText().toUpperCase().equals(product.toUpperCase())){
                 s.click();
                 break;
             }

@@ -36,7 +36,7 @@ formatter.step({
 });
 formatter.step({
   "line": 7,
-  "name": "user check \u003cdiscount\u003e",
+  "name": "user check discount \u003cdiscount\u003e",
   "keyword": "And "
 });
 formatter.step({
@@ -107,7 +107,7 @@ formatter.examples({
         "marek marek",
         "Hummingbird Printed Sweater",
         "20",
-        "S",
+        "L",
         "5",
         "PrestaShop \"pick up in store\"",
         "Pay by Check"
@@ -119,7 +119,7 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 6828930800,
+  "duration": 7116779900,
   "status": "passed"
 });
 formatter.scenario({
@@ -162,7 +162,7 @@ formatter.step({
 });
 formatter.step({
   "line": 7,
-  "name": "user check 20",
+  "name": "user check discount 20",
   "matchedColumns": [
     4
   ],
@@ -170,7 +170,7 @@ formatter.step({
 });
 formatter.step({
   "line": 8,
-  "name": "user choise size S",
+  "name": "user choise size L",
   "matchedColumns": [
     5
   ],
@@ -224,7 +224,7 @@ formatter.match({
   "location": "PurchaseOfTheProductSteps.openMystorePage()"
 });
 formatter.result({
-  "duration": 533526400,
+  "duration": 601850100,
   "status": "passed"
 });
 formatter.match({
@@ -241,7 +241,7 @@ formatter.match({
   "location": "PurchaseOfTheProductSteps.userLoginToMyStore(String,String)"
 });
 formatter.result({
-  "duration": 1170304100,
+  "duration": 1250144500,
   "status": "passed"
 });
 formatter.match({
@@ -254,7 +254,7 @@ formatter.match({
   "location": "PurchaseOfTheProductSteps.userIsLogedInWith(String)"
 });
 formatter.result({
-  "duration": 37944200,
+  "duration": 39731200,
   "status": "passed"
 });
 formatter.match({
@@ -267,20 +267,47 @@ formatter.match({
   "location": "PurchaseOfTheProductSteps.userSearchProduct(String)"
 });
 formatter.result({
-  "duration": 1313316300,
+  "duration": 1465461900,
   "status": "passed"
 });
-formatter.match({});
-formatter.result({
-  "status": "undefined"
+formatter.match({
+  "arguments": [
+    {
+      "val": " 20",
+      "offset": 19
+    }
+  ],
+  "location": "PurchaseOfTheProductSteps.userCheckDiscount(String)"
 });
-formatter.match({});
 formatter.result({
-  "status": "undefined"
+  "duration": 148349100,
+  "status": "passed"
 });
-formatter.match({});
+formatter.match({
+  "arguments": [
+    {
+      "val": "L",
+      "offset": 17
+    }
+  ],
+  "location": "PurchaseOfTheProductSteps.userChoiseSize(String)"
+});
 formatter.result({
-  "status": "undefined"
+  "duration": 131337600,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "5",
+      "offset": 30
+    }
+  ],
+  "location": "PurchaseOfTheProductSteps.userChoiseQuantity(String)"
+});
+formatter.result({
+  "duration": 1174075500,
+  "status": "passed"
 });
 formatter.match({});
 formatter.result({
@@ -307,7 +334,7 @@ formatter.result({
   "status": "undefined"
 });
 formatter.after({
-  "duration": 28500,
+  "duration": 27800,
   "status": "passed"
 });
 });

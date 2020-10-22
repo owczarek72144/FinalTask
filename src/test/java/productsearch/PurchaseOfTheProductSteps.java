@@ -11,6 +11,7 @@ import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import pages.LoginPage;
+import pages.ProductDetailPage;
 import pages.SearchResultsPage;
 import pages.YourAccountPage;
 
@@ -22,6 +23,7 @@ public class PurchaseOfTheProductSteps {
     private LoginPage loginPage;
     private YourAccountPage yourAccountPage;
     private SearchResultsPage searchResultsPage;
+    private ProductDetailPage productDetailPage;
 
     @Before
     public void setUp() {
@@ -34,6 +36,7 @@ public class PurchaseOfTheProductSteps {
         loginPage = new LoginPage(this.driver);
         yourAccountPage = new YourAccountPage(this.driver);
         searchResultsPage  = new SearchResultsPage(driver);
+        productDetailPage = new ProductDetailPage(driver);
 
     }
 
@@ -61,6 +64,22 @@ public class PurchaseOfTheProductSteps {
     public void userSearchProduct(String product) {
         this.yourAccountPage.searchProduct(product);
         this.searchResultsPage.searchProductFromList(product);
+
     }
+    @And("user check discount(.*)")
+    public void userCheckDiscount(String discount){
+        if(productDetailPage.checkDiscount(discount)){
+            System.out.println("Rabat wynosi: " + discount);
+        }
+    }
+    @And("user choise size (.*)")
+    public void userChoiseSize(String size){
+        productDetailPage.choiseSize(size);
+    }
+    @And("user will choose the quantity (.*)")
+    public void userChoiseQuantity(String quantity){
+        productDetailPage.choiseQuantity(quantity);
+    }
+
 
 }
