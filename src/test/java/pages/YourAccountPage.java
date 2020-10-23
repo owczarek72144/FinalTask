@@ -18,8 +18,12 @@ public class YourAccountPage {
     }
     @FindAll(@FindBy(xpath = "//*[@id='content']/div/div/a/span"))
     List<WebElement> yourAccountPageContent;
+
     @FindBy(name = "s")
     private WebElement searchForm;
+
+    @FindBy(id = "history-link")
+    private WebElement historyLink;
 
 
     public void goToYourAdressPage(){
@@ -41,6 +45,9 @@ public class YourAccountPage {
     public void searchProduct(String product){
         this.searchForm.sendKeys(product);
         this.searchForm.submit();
+    }
+    public void goToOrderHistory(){
+        historyLink.click();
     }
 
 }

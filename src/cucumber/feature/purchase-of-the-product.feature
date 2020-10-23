@@ -9,14 +9,22 @@ Feature: Purchase of the product
     And user will choose the quantity <quantity>
     Then user add product to cart
     And user go to checkout
-    And user choise adress
+    And user choise adress by alias <alias>
     And user choise shiping method <shippingMethod>
     And user choise payment option <paymentOption>
     Then user order product
+    Then take screenshot
+    And user go to order history
+    Then user check order data and order status <orderStatus>
 
 
 
     Examples:
-    |email|password|userName|product|discount|size|quantity|shippingMethod|paymentOption|
-    |marek@marek.pl|qwerty   |marek marek| Hummingbird Printed Sweater | 20|L|5|PrestaShop "pick up in store"|Pay by Check|
+    |email         |password |userName   |product                      |discount|size|quantity|alias   |shippingMethod  |paymentOption  |orderStatus           |
+    |marek@marek.pl|qwerty   |marek marek| Hummingbird Printed Sweater | 20     |L   |5       |ADCd1523|Pick up in-store|Pay by Check   |Awaiting check payment|
+    |marek@marek.pl|qwerty   |marek marek| Hummingbird Printed Sweater | 20     |XL  |5       |ADCd1523|Pick up in-store|Pay by Check   |Awaiting check payment|
+    |marek@marek.pl|qwerty   |marek marek| Hummingbird Printed Sweater | 20     |S   |5       |ADCd1523|Pick up in-store|Pay by Check   |Awaiting check payment|
+    |marek@marek.pl|qwerty   |marek marek| Hummingbird Printed Sweater | 20     |M   |5       |ADCd1523|Pick up in-store|Pay by Check   |Awaiting check payment|
+    |marek@marek.pl|qwerty   |marek marek| Hummingbird Printed Sweater | 20     |L   |5       |ADCd1523|My carrier      |Pay by Check   |Awaiting check payment|
+
 

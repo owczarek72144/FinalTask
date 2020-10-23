@@ -11,6 +11,7 @@ import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import pages.*;
+import utils.OrderData;
 
 
 import java.util.concurrent.TimeUnit;
@@ -22,6 +23,8 @@ public class PurchaseOfTheProductSteps {
     private SearchResultsPage searchResultsPage;
     private ProductDetailPage productDetailPage;
     private ShoppingCartPage shoppingCartPage;
+    private OrderHistoryPage orderHistoryPage;
+    private OrderData orderData;
 
     @Before
     public void setUp() {
@@ -36,12 +39,14 @@ public class PurchaseOfTheProductSteps {
         searchResultsPage  = new SearchResultsPage(driver);
         productDetailPage = new ProductDetailPage(driver);
         shoppingCartPage = new ShoppingCartPage(driver);
+        orderHistoryPage = new OrderHistoryPage(driver);
+
 
     }
 
     @After
     public void tearDown(){
-        //driver.close();
+        driver.close();
     }
     @Given("user open browser with my store login page")
     public void openMystorePage() {
@@ -67,27 +72,69 @@ public class PurchaseOfTheProductSteps {
     }
     @And("user check discount(.*)")
     public void userCheckDiscount(String discount){
-        if(productDetailPage.checkDiscount(discount)){
-            System.out.println("Rabat wynosi: " + discount);
-        }
+        Assert.assertTrue("Nieprawidłowa wysokość rabatu",productDetailPage.checkDiscount(discount));
     }
     @And("user choise size (.*)")
     public void userChoiseSize(String size){
         productDetailPage.choiseSize(size);
+
     }
+
     @And("user will choose the quantity (.*)")
     public void userChoiseQuantity(String quantity){
         productDetailPage.choiseQuantity(quantity);
+
+        Assert.assertTrue("Brak produktu",productDetailPage.checkAvailability());
     }
+
     @Then("user add product to cart")
     public void addProductToCart(){
         productDetailPage.addProductToCart();
     }
+
     @And("user go to checkout")
     public void userGoToCheckout(){
         shoppingCartPage.goToCheckout();
     }
 
+    @And("user choise adress by alias (.*)")
+    public void userChoiseAdress(String alias){
+        shoppingCartPage.choiseAdress(alias);
+
+    }
+
+    @And("user choise shiping method (.*)")
+    public void userChoiseShippingMethod(String method){
+        shoppingCartPage.choiseShippingMethod(method);
+    }
+
+    @And("user choise payment option (.*)")
+    public void userChoisePaymentOptionPaymentOption(String paymentOption) {
+        shoppingCartPage.choisePaymentOpiton(paymentOption);
+    }
+
+    @Then("user order product")
+    public void userOrderProduct(){
+        shoppingCartPage.orderProduct();
+    }
+    @Then("take screenshot")
+    public void userTakeScreenshot(){
+        orderData = shoppingCartPage.getOrderData();
+        shoppingCartPage.takeScrenshoot(driver,orderData);
+
+    }
+
+    @And("user go to order history")
+    public void userGoToOrderHistory(){
+        shoppingCartPage.goToYourAccountPage();
+        yourAccountPage.goToOrderHistory();
+
+    }
+    @Then("user check order data and order status (.*)")
+    public void userCheckOrderData(String status){
+        Assert.assertTrue("Nieprawidłowy numer lub status zamówienia",orderHistoryPage.checkOrder(orderData,status));
+
+    }
 
 
 }

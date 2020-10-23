@@ -29,6 +29,9 @@ public class ProductDetailPage {
 
     @FindBy(className = "modal-content")
     WebElement popUp;
+    @FindBy(id = "product-availability")
+    WebElement productAvailabity;
+
 
 
 
@@ -48,8 +51,6 @@ public class ProductDetailPage {
                 return false;
             } // jesli argument discount jest podany a lista prices.size > 1 sprawdzanie czy rabat sie zgadza.
             if(prices.size() > 1 ){
-                double regularPrice =Double.parseDouble(prices.get(0).getText().replaceAll("[^0-9.]",""));
-                double currentPrice =Double.parseDouble(prices.get(1).getText().replaceAll("[^0-9.]",""));
                 double discountValue =Double.parseDouble(prices.get(2).getText().replaceAll("[^0-9.]",""));
                 if(discountValue == Double.parseDouble(discount)){
                     return true;
@@ -83,5 +84,13 @@ public class ProductDetailPage {
         WebDriverWait waitForPopUp = new WebDriverWait(driver,10);
         waitForPopUp.until(ExpectedConditions.presenceOfElementLocated(By.className("modal-content")));
         popUp.findElement(By.xpath("//*[@id='blockcart-modal']//div/div/a")).click();
+    }
+
+
+    public boolean checkAvailability() {
+        if(productAvailabity.getText().equals("")){
+            return true;
+        }
+        return false;
     }
 }
