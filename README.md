@@ -16,7 +16,7 @@ kliknie w + Create new address,
 
 
   
-##Zadanie warsztatowe 2 (dowolny sposób). Napisz skrypt, który:
+## Zadanie warsztatowe 2 (dowolny sposób). Napisz skrypt, który:
 * zaloguje się na tego samego użytkownika z zadania 1,
 * wybierze do zakupu Hummingbird Printed Sweater (opcja dodatkowa: sprawdzi czy rabat na niego wynosi 20%),
 * wybierze rozmiar M (opcja dodatkowa: zrób tak żeby można było sparametryzować rozmiar i wybrać S,M,L,XL),
