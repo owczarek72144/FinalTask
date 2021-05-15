@@ -5,7 +5,7 @@ import cucumber.api.junit.Cucumber;
 import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = "src/cucumber/feature/purchase-of-the-product.feature",
+@CucumberOptions(features = "src/cucumber/feature/purchase-feature/purchase-of-the-product.feature",
         plugin = {"pretty","html:out"})
 
 

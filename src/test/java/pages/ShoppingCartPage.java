@@ -20,7 +20,11 @@ public class ShoppingCartPage {
     @FindBy(css = "div.card.cart-summary > div a")
     WebElement checkout;
 
+    @FindBy(id = "checkout-addresses-step")
+    WebElement checkoutAdressStep;
+
     @FindAll(@FindBy(xpath = "//*[@id='delivery-addresses']//article"))
+    //@FindAll(@FindBy(className ="address-item" ))
     List<WebElement> adressList;
 
     @FindBy(name = "confirm-addresses")
@@ -76,6 +80,9 @@ public class ShoppingCartPage {
     }
 
     public void choiseAdress(String alias) {
+       // List<WebElement> adressList= driver.findElements(By.xpath("//*[@id='delivery-addresses']//article"));
+        getCheckoutAdressStep().click();
+        System.out.println(adressList.toString());
       for(WebElement s : adressList){
             if(s.getText().contains(alias)){
                 s.click();
@@ -83,6 +90,10 @@ public class ShoppingCartPage {
                 break;
             }
         }
+    }
+
+    private WebElement getCheckoutAdressStep() {
+        return checkoutAdressStep;
     }
 
     public void choiseShippingMethod(String method) {
