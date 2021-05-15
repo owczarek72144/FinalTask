@@ -26,5 +26,7 @@ Feature: Purchase of the product
     |marek@marek.pl|qwerty   |marek marek| Hummingbird Printed Sweater | 20     |S   |5       |ADCd7326|Pick up in-store|Pay by Check   |Awaiting check payment|
     |marek@marek.pl|qwerty   |marek marek| Hummingbird Printed Sweater | 20     |M   |5       |ADCd7326|Pick up in-store|Pay by Check   |Awaiting check payment|
     |marek@marek.pl|qwerty   |marek marek| Hummingbird Printed Sweater | 20     |L   |5       |ADCd7326|My carrier      |Pay by Check   |Awaiting check payment|
+    |marek@marek.pl|qwertz   |marek marek| Hummingbird Printed Sweater | 20     |L   |5       |ADCd7326|My carrier      |Pay by Check   |Awaiting check payment|
+    |marek@marek.pl|qwerth   |marek marek| Hummingbird Printed Sweater | 20     |L   |5       |ADCd7326|My carrier      |Pay by Check   |Awaiting check payment|
 
 

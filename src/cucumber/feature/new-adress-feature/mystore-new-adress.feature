@@ -16,3 +16,4 @@ Feature: Adding and checking the adress
     Examples:
       |email         |password |userName   |alias  |adress  |city |postcode   |country        |phone     | messageSave               |messageDelete                |
       |marek@marek.pl|qwerty   |marek marek|ADCd    |Długa 51|Opole|44-444     |United Kingdom |546321789 |Address successfully added!|Address successfully deleted!|
+      |marek@marek.pl|qwertz   |marek marek|ADCd    |Długa 51|Opole|44-444     |United Kingdom |546321789 |Address successfully added!|Address successfully deleted!|
