@@ -30,7 +30,7 @@ public class PurchaseOfTheProductSteps {
     @Before
     public void setUp() {
         System.setProperty("webdriver.chrome.driver",
-                "src/main/resources/drivers/chromedriver");
+                "src/main/resources/drivers/chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless"); //for headless mode
         options.addArguments("--window-size=800,600");//The invisible browser window is only 800x600 in size
